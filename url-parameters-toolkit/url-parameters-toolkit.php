@@ -43,10 +43,13 @@ add_action( 'plugins_loaded', function() {
     \RUP\Updater\Updater_V1::register( $updater_config );
 }, 20 );
 
+// Load Custom Fields tab and logic
+require_once __DIR__ . '/sc-custom-fields.php';
 
 /**
  * Add the URL Parameters settings page under Settings.
  */
+
 add_action('admin_menu', 'rup_sc_url_params_admin_menu');
 function rup_sc_url_params_admin_menu() {
     add_options_page(
